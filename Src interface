@@ -1,0 +1,30 @@
+import React, { useState } from 'react';
+
+export default function CroquisInteractifApp() {
+  const [croquis, setCroquis] = useState('');
+  const [message] = useState("Bienvenue dans l'application des croquis interactifs Terminale ES");
+
+  const croquisList = [
+    '1. Pôles et flux',
+    '2. Inégale intégration',
+    '3. Territoire des USA',
+    '4. Asie orientale',
+    '5. Inde',
+    '6. Brésil',
+    '7. Suds',
+    '8. Nords et Suds'
+  ];
+
+  return (
+    <div style={{ padding: 20, fontFamily: 'Arial' }}>
+      <h1>{message}</h1>
+      <select onChange={(e) => setCroquis(e.target.value)} value={croquis}>
+        <option value=''>-- Choisir un croquis --</option>
+        {croquisList.map((c, idx) => (
+          <option key={idx} value={c}>{c}</option>
+        ))}
+      </select>
+      {croquis && <p style={{ marginTop: 20 }}>Vous avez sélectionné : <strong>{croquis}</strong></p>}
+    </div>
+  );
+}
