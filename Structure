@@ -1,0 +1,10 @@
+croquis-terminales-es/
+│
+├── public/
+│   └── index.html
+│
+├── src/
+│   ├── index.js
+│   └── CroquisInteractifApp.js
+│
+└── package.json
